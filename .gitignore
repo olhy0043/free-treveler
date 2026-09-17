@@ -42,3 +42,11 @@ next-env.d.ts
 
 # stray backup created while migrating app/ into this root repo
 app/.git-createnextapp-backup/
+
+# playwright artifacts
+app/playwright-report/
+app/test-results/
+
+# python cache
+__pycache__/
+*.pyc

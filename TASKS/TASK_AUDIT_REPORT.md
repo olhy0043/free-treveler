@@ -3,6 +3,7 @@
 **Result:** AUDIT_PASS
 **Checks run:** 19
 **최근 재감사:** PRD/SRS/PROJECT_SCOPE/ARCHITECTURE/UI_CONTRACT/SCREEN_ROUTE_CONTRACT/00_TASK_LIST/TASK_MANIFEST/TASKS 상세 63건 전수 재확인. 발견 2건 수정: (1) §0 요약의 COMPONENT 개수 오기(33→34, 실제 Task 카운트와 CSV 대조로 확인), (2) Page Owner Task(PAGE-SCR001/004/005)에 Loading 상태 AC·Expected Files(`loading.tsx`) 누락 — 추가 완료.
+**주의(재생성 함정):** `scripts/audit_tasks.py`(→`npm run task:contract`, `npm run validate`, `npm run ci`)는 이 파일과 `TASK_MANIFEST.csv`를 처음부터 다시 써서, `scripts/build_waves.py`가 채운 `wave_id` 열과 이 문서의 아래 19번 검사·이 안내문을 함께 지운다. `task:contract`(또는 이를 포함하는 `validate`/`ci`)를 실행한 뒤에는 반드시 `python scripts/build_waves.py`를 다시 실행해 `wave_id`를 복원하고, 이 19번 검사 항목도 수동으로 다시 추가해야 한다(두 스크립트가 서로의 산출물을 인식하지 못하는 것이 근본 원인이며, 이번 범위(package.json Script 추가)에서는 스크립트 자체를 고치지 않고 이 안내문으로 대체한다).
 
 ## 1. Task List 구현 ID와 상세 Task 파일 1:1 — PASS
 - 위반 없음

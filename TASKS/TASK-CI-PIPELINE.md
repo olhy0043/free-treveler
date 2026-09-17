@@ -40,6 +40,9 @@ docs/PROJECT_SCOPE.md에서 이 Task가 다루는 모든 Requirement(REQ-NF-016,
 ## Functional AC
 
 - PR마다 `tsc --noEmit`, ESLint, Vitest 단위 테스트 실행 및 실패 시 병합 차단
+- `app/package.json`의 `npm run ci`(lint→typecheck→test:unit→task:contract→screen:contract→build)를 그대로 호출한다 - 이 워크플로 자체에서 단계를 다시 나열하지 않는다.
+- `npm run ci`/`npm run release:check`를 **실제 병합 차단 게이트로 강제하는 것은 5개 고정 화면(SCR-001~005) 구현이 끝나는 Wave W13 이후부터**다. W13 이전에는 이 워크플로가 존재하더라도 결과를 병합 조건으로 강제하지 않는다(로컬 수동 실행 용도로만 등록된 상태).
+- E2E 단계는 Repository Secret에 실제 Supabase 키(`SUPABASE_URL`/`SUPABASE_ANON_KEY` 등)가 설정돼 있는지로 분기한다: 설정돼 있으면 `npm run test:e2e`(전체 Chromium Smoke), 없으면 `npm run test:e2e:public`(로그인 없이 가능한 공개 Smoke)만 실행한다.
 
 ## Visual AC
 

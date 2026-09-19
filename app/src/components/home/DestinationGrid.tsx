@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import { destinations } from "@/data/destinations";
 import type { Destination, DestinationRegion } from "@/data/types";
 import { isFavorite, subscribeFavorites, toggleFavorite } from "@/lib/favorites";
@@ -22,9 +22,6 @@ export default function DestinationGrid({ limit, onSelect, themeKeyword }: Desti
   const [country, setCountry] = useState(ALL);
   const [season, setSeason] = useState(ALL);
   const [keyword, setKeyword] = useState("");
-  const [, forceRerender] = useState(0);
-
-  useEffect(() => subscribeFavorites(() => forceRerender((v) => v + 1)), []);
 
   function handleScopeChange(next: DestinationRegion) {
     setScope(next);
@@ -132,12 +129,7 @@ export default function DestinationGrid({ limit, onSelect, themeKeyword }: Desti
       ) : (
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((destination) => (
-            <DestinationCard
-              key={destination.id}
-              destination={destination}
-              onSelect={onSelect}
-              onFavoriteToggled={() => forceRerender((v) => v + 1)}
-            />
+            <DestinationCard key={destination.id} destination={destination} onSelect={onSelect} />
           ))}
         </div>
       )}
@@ -148,13 +140,17 @@ export default function DestinationGrid({ limit, onSelect, themeKeyword }: Desti
 function DestinationCard({
   destination,
   onSelect,
-  onFavoriteToggled,
 }: {
   destination: Destination;
   onSelect?: (destination: Destination) => void;
-  onFavoriteToggled: () => void;
 }) {
-  const favorite = isFavorite(destination.id);
+  // localStorage is unavailable during SSR; getServerSnapshot returns false so
+  // the server-rendered markup matches the initial client render (no hydration mismatch).
+  const favorite = useSyncExternalStore(
+    subscribeFavorites,
+    () => isFavorite(destination.id),
+    () => false,
+  );
 
   return (
     <div className="group relative overflow-hidden rounded-[14px] border border-[#E3E1DC] bg-[#FFFFFF] transition-shadow hover:shadow-[0_1px_2px_rgba(0,0,0,.06),0_4px_10px_rgba(0,0,0,.08)]">
@@ -184,10 +180,7 @@ function DestinationCard({
         type="button"
         aria-label={favorite ? "즐겨찾기 해제" : "즐겨찾기 추가"}
         aria-pressed={favorite}
-        onClick={() => {
-          toggleFavorite(destination.id);
-          onFavoriteToggled();
-        }}
+        onClick={() => toggleFavorite(destination.id)}
         className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#FFFFFF]/90 text-[#FF6A45]"
       >
         {favorite ? "♥" : "♡"}

@@ -40,7 +40,7 @@ export const destinations: Destination[] = [
     "source": "서울관광재단 공식 가이드북(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Seoul-Gyeongbokgung",
+      "url": "https://picsum.photos/seed/Seoul-Gyeongbokgung/1600/900",
       "alt": "서울 경복궁 근정전과 방문객들"
     }
   },
@@ -83,7 +83,7 @@ export const destinations: Destination[] = [
     "source": "부산관광공사 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Busan-Gwangalli",
+      "url": "https://picsum.photos/seed/Busan-Gwangalli/1600/900",
       "alt": "부산 광안리 해변과 광안대교 야경"
     }
   },
@@ -126,7 +126,7 @@ export const destinations: Destination[] = [
     "source": "제주관광공사 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Jeju-Seongsan",
+      "url": "https://picsum.photos/seed/Jeju-Seongsan/1600/900",
       "alt": "제주 성산일출봉 전경"
     }
   },
@@ -169,7 +169,7 @@ export const destinations: Destination[] = [
     "source": "경주시 문화관광 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Gyeongju-Cheomseongdae",
+      "url": "https://picsum.photos/seed/Gyeongju-Cheomseongdae/1600/900",
       "alt": "경주 첨성대 야경"
     }
   },
@@ -212,7 +212,7 @@ export const destinations: Destination[] = [
     "source": "전주시 문화관광 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Jeonju-Hanok",
+      "url": "https://picsum.photos/seed/Jeonju-Hanok/1600/900",
       "alt": "전주한옥마을 기와지붕 전경"
     }
   },
@@ -255,7 +255,7 @@ export const destinations: Destination[] = [
     "source": "강릉시 문화관광 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Gangneung-Anmok",
+      "url": "https://picsum.photos/seed/Gangneung-Anmok/1600/900",
       "alt": "강릉 안목해변 카페거리와 바다"
     }
   },
@@ -298,7 +298,7 @@ export const destinations: Destination[] = [
     "source": "여수시 문화관광 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Yeosu-NightSea",
+      "url": "https://picsum.photos/seed/Yeosu-NightSea/1600/900",
       "alt": "여수 밤바다와 해상케이블카 야경"
     }
   },
@@ -341,7 +341,7 @@ export const destinations: Destination[] = [
     "source": "통영시 문화관광 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Tongyeong-Dongpirang",
+      "url": "https://picsum.photos/seed/Tongyeong-Dongpirang/1600/900",
       "alt": "통영 동피랑 벽화마을 골목"
     }
   },
@@ -384,7 +384,7 @@ export const destinations: Destination[] = [
     "source": "속초시 문화관광 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Sokcho-Seorak",
+      "url": "https://picsum.photos/seed/Sokcho-Seorak/1600/900",
       "alt": "설악산 케이블카에서 본 권금성 전경"
     }
   },
@@ -427,7 +427,7 @@ export const destinations: Destination[] = [
     "source": "안동시 문화관광 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Andong-Hahoe",
+      "url": "https://picsum.photos/seed/Andong-Hahoe/1600/900",
       "alt": "안동 하회마을 전통가옥과 낙동강"
     }
   },
@@ -470,7 +470,7 @@ export const destinations: Destination[] = [
     "source": "일본정부관광국(JNTO) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Tokyo-Shibuya",
+      "url": "https://picsum.photos/seed/Tokyo-Shibuya/1600/900",
       "alt": "도쿄 시부야 스크램블 교차로 야경"
     }
   },
@@ -513,7 +513,7 @@ export const destinations: Destination[] = [
     "source": "일본정부관광국(JNTO) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Osaka-Dotonbori",
+      "url": "https://picsum.photos/seed/Osaka-Dotonbori/1600/900",
       "alt": "오사카 도톤보리 거리와 글리코 간판"
     }
   },
@@ -556,7 +556,7 @@ export const destinations: Destination[] = [
     "source": "태국관광청(TAT) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Bangkok-WatArun",
+      "url": "https://picsum.photos/seed/Bangkok-WatArun/1600/900",
       "alt": "방콕 왓아룬 사원과 짜오프라야강"
     }
   },
@@ -599,7 +599,7 @@ export const destinations: Destination[] = [
     "source": "태국관광청(TAT) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?ChiangMai-DoiSuthep",
+      "url": "https://picsum.photos/seed/ChiangMai-DoiSuthep/1600/900",
       "alt": "치앙마이 왓프라탓도이수텝 전경"
     }
   },
@@ -642,7 +642,7 @@ export const destinations: Destination[] = [
     "source": "베트남국가관광청 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Hanoi-HoanKiem",
+      "url": "https://picsum.photos/seed/Hanoi-HoanKiem/1600/900",
       "alt": "하노이 호안끼엠 호수와 옥산사"
     }
   },
@@ -685,7 +685,7 @@ export const destinations: Destination[] = [
     "source": "베트남국가관광청 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Danang-GoldenBridge",
+      "url": "https://picsum.photos/seed/Danang-GoldenBridge/1600/900",
       "alt": "다낭 바나힐 골든브릿지"
     }
   },
@@ -728,7 +728,7 @@ export const destinations: Destination[] = [
     "source": "프랑스관광청(Atout France) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Paris-EiffelTower",
+      "url": "https://picsum.photos/seed/Paris-EiffelTower/1600/900",
       "alt": "파리 에펠탑과 센강"
     }
   },
@@ -771,7 +771,7 @@ export const destinations: Destination[] = [
     "source": "프랑스관광청(Atout France) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Nice-Promenade",
+      "url": "https://picsum.photos/seed/Nice-Promenade/1600/900",
       "alt": "니스 해안과 프롬나드 데 장글레"
     }
   },
@@ -814,7 +814,7 @@ export const destinations: Destination[] = [
     "source": "이탈리아관광청(ENIT) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Rome-Colosseum",
+      "url": "https://picsum.photos/seed/Rome-Colosseum/1600/900",
       "alt": "로마 콜로세움 전경"
     }
   },
@@ -857,7 +857,7 @@ export const destinations: Destination[] = [
     "source": "이탈리아관광청(ENIT) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Florence-Duomo",
+      "url": "https://picsum.photos/seed/Florence-Duomo/1600/900",
       "alt": "피렌체 두오모 대성당과 붉은 지붕"
     }
   },
@@ -900,7 +900,7 @@ export const destinations: Destination[] = [
     "source": "스페인관광청(Turespana) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Barcelona-SagradaFamilia",
+      "url": "https://picsum.photos/seed/Barcelona-SagradaFamilia/1600/900",
       "alt": "바르셀로나 사그라다파밀리아"
     }
   },
@@ -943,7 +943,7 @@ export const destinations: Destination[] = [
     "source": "스페인관광청(Turespana) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Madrid-RoyalPalace",
+      "url": "https://picsum.photos/seed/Madrid-RoyalPalace/1600/900",
       "alt": "마드리드 왕궁 전경"
     }
   },
@@ -986,7 +986,7 @@ export const destinations: Destination[] = [
     "source": "영국관광청(VisitBritain) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?London-TowerBridge",
+      "url": "https://picsum.photos/seed/London-TowerBridge/1600/900",
       "alt": "런던 타워브리지와 템스강"
     }
   },
@@ -1029,7 +1029,7 @@ export const destinations: Destination[] = [
     "source": "영국관광청(VisitBritain) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Edinburgh-Castle",
+      "url": "https://picsum.photos/seed/Edinburgh-Castle/1600/900",
       "alt": "에든버러성과 로열마일"
     }
   },
@@ -1072,7 +1072,7 @@ export const destinations: Destination[] = [
     "source": "독일관광청(GNTB) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Berlin-Brandenburg",
+      "url": "https://picsum.photos/seed/Berlin-Brandenburg/1600/900",
       "alt": "베를린 브란덴부르크문"
     }
   },
@@ -1115,7 +1115,7 @@ export const destinations: Destination[] = [
     "source": "독일관광청(GNTB) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Munich-Neuschwanstein",
+      "url": "https://picsum.photos/seed/Munich-Neuschwanstein/1600/900",
       "alt": "뮌헨 노이슈반슈타인성"
     }
   },
@@ -1158,7 +1158,7 @@ export const destinations: Destination[] = [
     "source": "미국관광청(Brand USA) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?NewYork-TimesSquare",
+      "url": "https://picsum.photos/seed/NewYork-TimesSquare/1600/900",
       "alt": "뉴욕 타임스스퀘어 야경"
     }
   },
@@ -1201,7 +1201,7 @@ export const destinations: Destination[] = [
     "source": "미국관광청(Brand USA) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?LA-HollywoodSign",
+      "url": "https://picsum.photos/seed/LA-HollywoodSign/1600/900",
       "alt": "로스앤젤레스 할리우드사인"
     }
   },
@@ -1244,7 +1244,7 @@ export const destinations: Destination[] = [
     "source": "캐나다관광청(Destination Canada) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Vancouver-StanleyPark",
+      "url": "https://picsum.photos/seed/Vancouver-StanleyPark/1600/900",
       "alt": "밴쿠버 스탠리파크와 도심 전경"
     }
   },
@@ -1287,7 +1287,7 @@ export const destinations: Destination[] = [
     "source": "캐나다관광청(Destination Canada) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Toronto-CNTower",
+      "url": "https://picsum.photos/seed/Toronto-CNTower/1600/900",
       "alt": "토론토 CN타워와 스카이라인"
     }
   },
@@ -1330,7 +1330,7 @@ export const destinations: Destination[] = [
     "source": "호주관광청(Tourism Australia) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Sydney-OperaHouse",
+      "url": "https://picsum.photos/seed/Sydney-OperaHouse/1600/900",
       "alt": "시드니 오페라하우스와 하버브리지"
     }
   },
@@ -1373,7 +1373,7 @@ export const destinations: Destination[] = [
     "source": "호주관광청(Tourism Australia) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Melbourne-GreatOceanRoad",
+      "url": "https://picsum.photos/seed/Melbourne-GreatOceanRoad/1600/900",
       "alt": "멜버른 그레이트오션로드 12사도"
     }
   },
@@ -1416,7 +1416,7 @@ export const destinations: Destination[] = [
     "source": "뉴질랜드관광청(Tourism New Zealand) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Auckland-SkyTower",
+      "url": "https://picsum.photos/seed/Auckland-SkyTower/1600/900",
       "alt": "오클랜드 스카이타워와 항만"
     }
   },
@@ -1459,7 +1459,7 @@ export const destinations: Destination[] = [
     "source": "뉴질랜드관광청(Tourism New Zealand) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Queenstown-Wakatipu",
+      "url": "https://picsum.photos/seed/Queenstown-Wakatipu/1600/900",
       "alt": "퀸스타운 와카티푸호와 서던알프스"
     }
   },
@@ -1502,7 +1502,7 @@ export const destinations: Destination[] = [
     "source": "대만관광청(Taiwan Tourism) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Taipei-Taipei101",
+      "url": "https://picsum.photos/seed/Taipei-Taipei101/1600/900",
       "alt": "타이베이101과 야경"
     }
   },
@@ -1545,7 +1545,7 @@ export const destinations: Destination[] = [
     "source": "대만관광청(Taiwan Tourism) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Kaohsiung-LotusPond",
+      "url": "https://picsum.photos/seed/Kaohsiung-LotusPond/1600/900",
       "alt": "가오슝 롄츠탄 용호탑"
     }
   },
@@ -1588,7 +1588,7 @@ export const destinations: Destination[] = [
     "source": "그리스관광청(GNTO) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Athens-Acropolis",
+      "url": "https://picsum.photos/seed/Athens-Acropolis/1600/900",
       "alt": "아테네 아크로폴리스와 파르테논신전"
     }
   },
@@ -1631,7 +1631,7 @@ export const destinations: Destination[] = [
     "source": "그리스관광청(GNTO) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Santorini-Oia",
+      "url": "https://picsum.photos/seed/Santorini-Oia/1600/900",
       "alt": "산토리니 이아마을 노을"
     }
   },
@@ -1674,7 +1674,7 @@ export const destinations: Destination[] = [
     "source": "튀르키예관광청(Go Turkiye) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Istanbul-BlueMosque",
+      "url": "https://picsum.photos/seed/Istanbul-BlueMosque/1600/900",
       "alt": "이스탄불 블루모스크와 보스포루스"
     }
   },
@@ -1717,7 +1717,7 @@ export const destinations: Destination[] = [
     "source": "튀르키예관광청(Go Turkiye) 공식 자료(2025)",
     "updatedAt": "2026-01-05",
     "image": {
-      "url": "https://source.unsplash.com/1600x900/?Cappadocia-Balloons",
+      "url": "https://picsum.photos/seed/Cappadocia-Balloons/1600/900",
       "alt": "카파도키아 열기구 투어"
     }
   }

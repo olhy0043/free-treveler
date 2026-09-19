@@ -27,7 +27,7 @@
         "DB-ACCESS",
         "API-AUTH"
       ],
-      "status": "blocked",
+      "status": "completed",
       "checkpoint_required": false,
       "checkpoint_result": null
     },

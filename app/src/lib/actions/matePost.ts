@@ -142,6 +142,21 @@ export async function updateMatePost(postId: string, input: MatePostInput): Prom
   return { ok: true };
 }
 
+export async function deleteMatePost(postId: string): Promise<ActionResult> {
+  const author = await requireEligibleAuthor();
+  if (!author.ok) {
+    return { ok: false, error: author.error };
+  }
+
+  const { error } = await author.supabase.from("mate_post").delete().eq("id", postId).eq("author_id", author.userId);
+
+  if (error) {
+    return { ok: false, error: error.message };
+  }
+
+  return { ok: true };
+}
+
 export async function closeMatePost(postId: string): Promise<ActionResult> {
   const author = await requireEligibleAuthor();
   if (!author.ok) {

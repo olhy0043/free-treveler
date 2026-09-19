@@ -1,5 +1,4 @@
 import { createBrowserClient, createServerClient } from "@supabase/ssr";
-import { cookies } from "next/headers";
 import type { Database } from "./types";
 
 function requireEnv(name: string): string {
@@ -20,6 +19,9 @@ export function getBrowserClient() {
 
 /** Server Component / Route Handler / Server Action Supabase client (cookie-bound session). */
 export async function getServerClient() {
+  // Dynamically imported so this Server-only API is never pulled into a Client
+  // Component bundle just because it shares a module with getBrowserClient().
+  const { cookies } = await import("next/headers");
   const cookieStore = await cookies();
 
   return createServerClient<Database>(

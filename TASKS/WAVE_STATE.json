@@ -95,9 +95,9 @@
         "CMP-SCR003-MATE-TAB",
         "PAGE-SCR003"
       ],
-      "status": "pending",
+      "status": "completed",
       "checkpoint_required": true,
-      "checkpoint_result": null
+      "checkpoint_result": "CONFIRMED_2026-09-19_user_reported_mate_tab_404_fixed_then_told_to_continue"
     },
     {
       "wave_id": "W08",

@@ -109,7 +109,7 @@
         "CMP-SCR004-DETAIL-PANEL",
         "CMP-SCR004-FILTER"
       ],
-      "status": "pending",
+      "status": "completed",
       "checkpoint_required": false,
       "checkpoint_result": null
     },

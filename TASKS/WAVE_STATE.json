@@ -67,7 +67,7 @@
         "CMP-SCR002-GALLERY",
         "CMP-SCR002-PROFILE-HERO"
       ],
-      "status": "pending",
+      "status": "completed",
       "checkpoint_required": false,
       "checkpoint_result": null
     },

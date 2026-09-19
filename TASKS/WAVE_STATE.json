@@ -187,9 +187,9 @@
       "task_ids": [
         "RELEASE-VERCEL-SUPABASE"
       ],
-      "status": "pending",
+      "status": "in_progress",
       "checkpoint_required": false,
-      "checkpoint_result": null
+      "checkpoint_result": "PENDING_HUMAN_SIGNOFF_no_deploy_yet_see_docs_RELEASE_CHECKLIST"
     }
   ]
 }

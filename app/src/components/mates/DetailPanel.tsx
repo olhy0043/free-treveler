@@ -59,7 +59,15 @@ function DetailContent({ post }: { post: MatePostDetail }) {
   );
 }
 
-export default function DetailPanel({ post, onClose }: { post: MatePostDetail | null; onClose: () => void }) {
+export default function DetailPanel({
+  post,
+  onClose,
+  children,
+}: {
+  post: MatePostDetail | null;
+  onClose: () => void;
+  children?: React.ReactNode;
+}) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -77,7 +85,10 @@ export default function DetailPanel({ post, onClose }: { post: MatePostDetail | 
       {/* Desktop: static right-hand column, part of the left/right split layout. */}
       <div className="hidden rounded-[14px] border border-[#E3E1DC] bg-[#FFFFFF] p-6 md:block">
         {post ? (
-          <DetailContent post={post} />
+          <div className="flex flex-col gap-4">
+            <DetailContent post={post} />
+            {children}
+          </div>
         ) : (
           <p className="text-base leading-[1.6] text-[#6E6E75]">
             왼쪽 목록에서 동행글을 선택하면 상세 내용을 여기에서 볼 수 있습니다.
@@ -106,6 +117,7 @@ export default function DetailPanel({ post, onClose }: { post: MatePostDetail | 
               </button>
             </div>
             <DetailContent post={post} />
+            {children}
           </div>
         </div>
       ) : null}

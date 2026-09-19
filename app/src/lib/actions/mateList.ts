@@ -24,8 +24,10 @@ export interface MatePostSummary {
   endDate: string;
   capacity: number;
   travelStyle: string[];
+  description: string;
   status: MatePostStatus;
   createdAt: string;
+  authorId: string;
   author: { nickname: string; ageGroup: string; gender: string | null } | null;
 }
 
@@ -38,6 +40,7 @@ interface MatePostQueryRow {
   end_date: string;
   capacity: number;
   travel_style: string[];
+  description: string;
   status: MatePostStatus;
   created_at: string;
   author_id: string;
@@ -56,7 +59,7 @@ export async function getMatePosts(filters: MateListFilters = {}): Promise<MateP
   let query = supabase
     .from("mate_post")
     .select(
-      "id, title, country, region, start_date, end_date, capacity, travel_style, status, created_at, author_id, author:user_profile(nickname, age_group, gender)",
+      "id, title, country, region, start_date, end_date, capacity, travel_style, description, status, created_at, author_id, author:user_profile(nickname, age_group, gender)",
     )
     .order("created_at", { ascending: false });
 
@@ -101,8 +104,10 @@ export async function getMatePosts(filters: MateListFilters = {}): Promise<MateP
       endDate: row.end_date,
       capacity: row.capacity,
       travelStyle: row.travel_style,
+      description: row.description,
       status: row.status === "RECRUITING" && row.end_date < today ? "CLOSED" : row.status,
       createdAt: row.created_at,
+      authorId: row.author_id,
       author: row.author
         ? { nickname: row.author.nickname, ageGroup: row.author.age_group, gender: row.author.gender }
         : null,

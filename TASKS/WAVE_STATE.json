@@ -54,9 +54,9 @@
         "CMP-SCR001-MATE-PREVIEW",
         "PAGE-SCR001"
       ],
-      "status": "in_progress",
+      "status": "completed",
       "checkpoint_required": true,
-      "checkpoint_result": "PENDING_HUMAN_REVIEW"
+      "checkpoint_result": "CONFIRMED_2026-09-19_user_reviewed_home_known_issue_images_not_loading"
     },
     {
       "wave_id": "W05",

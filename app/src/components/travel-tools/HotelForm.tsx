@@ -17,6 +17,13 @@ function todayIso() {
   return new Date().toISOString().slice(0, 10);
 }
 
+/** REQ-FUNC-021: rejects a past check-in date or a check-out date not later than check-in. */
+export function validateHotelDates(checkIn: string, checkOut: string, today = todayIso()): string | null {
+  if (checkIn < today) return "체크인은 오늘 이후여야 합니다.";
+  if (checkOut <= checkIn) return "체크아웃은 체크인보다 늦어야 합니다.";
+  return null;
+}
+
 export default function HotelForm() {
   const [country, setCountry] = useState("");
   const [region, setRegion] = useState("");
@@ -35,9 +42,7 @@ export default function HotelForm() {
 
   function validate(): string | null {
     if (!country || !region || !checkIn || !checkOut) return "국가·지역·체크인·체크아웃을 모두 입력해 주세요.";
-    if (checkIn < todayIso()) return "체크인은 오늘 이후여야 합니다.";
-    if (checkOut <= checkIn) return "체크아웃은 체크인보다 늦어야 합니다.";
-    return null;
+    return validateHotelDates(checkIn, checkOut);
   }
 
   function handleSubmit(event: React.FormEvent) {

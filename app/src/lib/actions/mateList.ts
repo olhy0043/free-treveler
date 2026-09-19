@@ -48,6 +48,14 @@ interface MatePostQueryRow {
 }
 
 /**
+ * REQ-FUNC-037: a RECRUITING post whose end_date has passed reports as CLOSED without a cron job.
+ * Exported as async because every export of a "use server" module must be an Action.
+ */
+export async function computeMatePostStatus(status: MatePostStatus, endDate: string, today: string): Promise<MatePostStatus> {
+  return status === "RECRUITING" && endDate < today ? "CLOSED" : status;
+}
+
+/**
  * REQ-FUNC-030/033/037: filtered mate_post listing. Selected columns never
  * include email/phone (those live only in auth.users, not selected here).
  * Blocked authors' posts are excluded, and end_date-passed RECRUITING posts
@@ -91,11 +99,13 @@ export async function getMatePosts(filters: MateListFilters = {}): Promise<MateP
 
   const today = new Date().toISOString().slice(0, 10);
 
-  return (data as unknown as MatePostQueryRow[])
+  const filteredRows = (data as unknown as MatePostQueryRow[])
     .filter((row) => !blockedAuthorIds.has(row.author_id))
     .filter((row) => (filters.ageGroup ? row.author?.age_group === filters.ageGroup : true))
-    .filter((row) => (filters.gender ? row.author?.gender === filters.gender : true))
-    .map((row) => ({
+    .filter((row) => (filters.gender ? row.author?.gender === filters.gender : true));
+
+  return Promise.all(
+    filteredRows.map(async (row) => ({
       id: row.id,
       title: row.title,
       country: row.country,
@@ -105,11 +115,12 @@ export async function getMatePosts(filters: MateListFilters = {}): Promise<MateP
       capacity: row.capacity,
       travelStyle: row.travel_style,
       description: row.description,
-      status: row.status === "RECRUITING" && row.end_date < today ? "CLOSED" : row.status,
+      status: await computeMatePostStatus(row.status, row.end_date, today),
       createdAt: row.created_at,
       authorId: row.author_id,
       author: row.author
         ? { nickname: row.author.nickname, ageGroup: row.author.age_group, gender: row.author.gender }
         : null,
-    }));
+    })),
+  );
 }

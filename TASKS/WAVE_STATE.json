@@ -164,7 +164,7 @@
         "UNIT-MATE-STATE",
         "UNIT-CONTACT-DETECTION"
       ],
-      "status": "pending",
+      "status": "completed",
       "checkpoint_required": false,
       "checkpoint_result": null
     },

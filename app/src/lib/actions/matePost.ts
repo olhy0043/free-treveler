@@ -4,10 +4,10 @@ import { getServerClient, sanitizeText } from "@/lib/db/client";
 import type { ActionResult } from "@/lib/actions/auth";
 
 const CONTACT_PATTERNS = [
-  /01[016789]-?\d{3,4}-?\d{4}/, // KR mobile phone
+  /01[016789][-\s]?\d{3,4}[-\s]?\d{4}/, // KR mobile phone (dash- or space-separated)
   /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i, // email
-  /(카카오|카톡|kakao)\s*[:\-]?\s*[a-z0-9_]+/i, // KakaoTalk id
-  /(instagram|인스타)\s*[:\-]?\s*@?[a-z0-9_.]+/i, // Instagram handle
+  /카카오|카톡|kakao/i, // any mention of KakaoTalk (with or without an id following)
+  /인스타|instagram/i, // any mention of Instagram (with or without a handle following)
   /https?:\/\/\S+/i, // outbound link
 ];
 

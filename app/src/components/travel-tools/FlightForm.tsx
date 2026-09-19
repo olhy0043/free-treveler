@@ -17,6 +17,13 @@ function todayIso() {
   return new Date().toISOString().slice(0, 10);
 }
 
+/** REQ-FUNC-013: rejects a past departure date or a return date before the departure date. */
+export function validateFlightDates(departDate: string, returnDate: string, today = todayIso()): string | null {
+  if (departDate < today) return "출발일은 오늘 이후여야 합니다.";
+  if (returnDate < departDate) return "귀국일은 출발일보다 빠를 수 없습니다.";
+  return null;
+}
+
 export default function FlightForm() {
   const [country, setCountry] = useState("");
   const [region, setRegion] = useState("");
@@ -35,9 +42,7 @@ export default function FlightForm() {
 
   function validate(): string | null {
     if (!country || !region || !departDate || !returnDate) return "국가·지역·출발일·귀국일을 모두 입력해 주세요.";
-    if (departDate < todayIso()) return "출발일은 오늘 이후여야 합니다.";
-    if (returnDate < departDate) return "귀국일은 출발일보다 빠를 수 없습니다.";
-    return null;
+    return validateFlightDates(departDate, returnDate);
   }
 
   function handleSubmit(event: React.FormEvent) {

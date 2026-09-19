@@ -13,9 +13,11 @@ export interface DestinationGridProps {
   /** Optional max number of cards to render (homepage preview sections use 6). */
   limit?: number;
   onSelect?: (destination: Destination) => void;
+  /** External AND-filter (e.g. from ThemeChips), matched against name/description/attractions. */
+  themeKeyword?: string | null;
 }
 
-export default function DestinationGrid({ limit, onSelect }: DestinationGridProps) {
+export default function DestinationGrid({ limit, onSelect, themeKeyword }: DestinationGridProps) {
   const [scope, setScope] = useState<DestinationRegion>("domestic");
   const [country, setCountry] = useState(ALL);
   const [season, setSeason] = useState(ALL);
@@ -40,13 +42,12 @@ export default function DestinationGrid({ limit, onSelect }: DestinationGridProp
     return scoped.filter((d) => {
       if (country !== ALL && d.country !== country) return false;
       if (season !== ALL && !d.bestSeason.includes(season)) return false;
-      if (trimmedKeyword) {
-        const haystack = `${d.name} ${d.description} ${d.attractions.join(" ")}`.toLowerCase();
-        if (!haystack.includes(trimmedKeyword)) return false;
-      }
+      const haystack = `${d.name} ${d.description} ${d.attractions.join(" ")}`.toLowerCase();
+      if (trimmedKeyword && !haystack.includes(trimmedKeyword)) return false;
+      if (themeKeyword && !haystack.includes(themeKeyword.toLowerCase())) return false;
       return true;
     });
-  }, [scoped, country, season, keyword]);
+  }, [scoped, country, season, keyword, themeKeyword]);
 
   const visible = limit ? filtered.slice(0, limit) : filtered;
 

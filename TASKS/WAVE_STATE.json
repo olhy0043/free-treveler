@@ -80,9 +80,9 @@
         "CMP-SCR002-TIMELINE",
         "PAGE-SCR002"
       ],
-      "status": "pending",
+      "status": "in_progress",
       "checkpoint_required": true,
-      "checkpoint_result": null
+      "checkpoint_result": "PENDING_HUMAN_REVIEW"
     },
     {
       "wave_id": "W07",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ToastViewport from "@/components/ui/Toast";
@@ -6,6 +7,7 @@ import AuthPanel from "@/components/account/AuthPanel";
 import AccountSections from "@/components/account/AccountSections";
 import { getServerClient } from "@/lib/db/client";
 import { getMyActivity } from "@/lib/actions/myActivity";
+import { updatePassword } from "@/lib/actions/auth";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const TITLE = "계정·관리 - Free Traveler";
@@ -60,7 +62,45 @@ function GuestSections() {
   );
 }
 
-export default async function AccountPage() {
+async function handleUpdatePassword(formData: FormData) {
+  "use server";
+  const newPassword = formData.get("newPassword")?.toString() ?? "";
+  await updatePassword(newPassword);
+  redirect("/account");
+}
+
+function RecoveryNotice() {
+  return (
+    <section aria-label="새 비밀번호 설정" className="rounded-[14px] border border-[#E3E1DC] bg-[#FFFFFF] p-6">
+      <h2 className="text-[18px] font-semibold leading-[1.4] text-[#2A2A2E]">새 비밀번호 설정</h2>
+      <p className="mt-1 text-[14px] leading-[1.5] text-[#6E6E75]">비밀번호 재설정 링크로 들어오셨습니다. 새 비밀번호를 입력해 주세요.</p>
+      <form action={handleUpdatePassword} className="mt-4 flex flex-col gap-3 sm:flex-row">
+        <input
+          type="password"
+          name="newPassword"
+          placeholder="새 비밀번호(8자 이상)"
+          minLength={8}
+          required
+          className="h-12 flex-1 rounded-lg border border-[#E3E1DC] px-3 text-[16px] text-[#2A2A2E]"
+        />
+        <button
+          type="submit"
+          className="rounded-lg bg-[#FF6A45] px-6 py-3 text-base font-semibold leading-[1.25] text-white hover:bg-[#E24E29]"
+        >
+          비밀번호 저장
+        </button>
+      </form>
+    </section>
+  );
+}
+
+export default async function AccountPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ flow?: string }>;
+}) {
+  const isRecovery = (await searchParams).flow === "recovery";
+
   const supabase = await getServerClient();
   const {
     data: { user },
@@ -71,6 +111,13 @@ export default async function AccountPage() {
       <>
         <Header />
         <main className="mx-auto max-w-[1280px] px-4 py-10 md:px-8 md:py-16">
+          {isRecovery ? (
+            <div className="mb-8">
+              <p className="rounded-[14px] bg-[#FFD7C7] p-4 text-[14px] leading-[1.5] text-[#E24E29]">
+                재설정 링크가 만료되었거나 이미 사용되었습니다. 아래에서 재설정 메일을 다시 요청해 주세요.
+              </p>
+            </div>
+          ) : null}
           <GuestSections />
         </main>
         <Footer />
@@ -88,6 +135,11 @@ export default async function AccountPage() {
     <>
       <Header />
       <main className="mx-auto max-w-[1280px] px-4 py-10 md:px-8 md:py-16">
+        {isRecovery ? (
+          <div className="mb-8">
+            <RecoveryNotice />
+          </div>
+        ) : null}
         <AccountSections activity={activity} isAdmin={profile?.role === "admin"} />
       </main>
       <Footer />

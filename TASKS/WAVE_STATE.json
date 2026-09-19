@@ -13,7 +13,7 @@
         "GLOBAL-TOAST",
         "DATA-REPRESENTATIVE"
       ],
-      "status": "pending",
+      "status": "completed",
       "checkpoint_required": false,
       "checkpoint_result": null
     },
@@ -27,7 +27,7 @@
         "DB-ACCESS",
         "API-AUTH"
       ],
-      "status": "pending",
+      "status": "blocked",
       "checkpoint_required": false,
       "checkpoint_result": null
     },

@@ -27,16 +27,21 @@ export default function MateTab() {
   useEffect(() => {
     let cancelled = false;
     async function loadEligibility() {
-      const supabase = getBrowserClient();
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!user) {
+      try {
+        const supabase = getBrowserClient();
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        if (!user) {
+          if (!cancelled) setEligibility("guest");
+          return;
+        }
+        const { data: profile } = await supabase.from("user_profile").select("is_adult").eq("id", user.id).single();
+        if (!cancelled) setEligibility(profile?.is_adult ? "eligible" : "minor");
+      } catch {
+        // Never leave the skeleton spinning forever on a client/network error - fall back to guest.
         if (!cancelled) setEligibility("guest");
-        return;
       }
-      const { data: profile } = await supabase.from("user_profile").select("is_adult").eq("id", user.id).single();
-      if (!cancelled) setEligibility(profile?.is_adult ? "eligible" : "minor");
     }
     loadEligibility();
     return () => {

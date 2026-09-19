@@ -177,7 +177,7 @@
         "E2E-MATE-AUTH",
         "MANUAL-A11Y-CHECK"
       ],
-      "status": "pending",
+      "status": "completed",
       "checkpoint_required": false,
       "checkpoint_result": null
     },

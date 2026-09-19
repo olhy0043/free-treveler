@@ -17,16 +17,20 @@ export default function ApplyForm({ postId }: { postId: string }) {
   useEffect(() => {
     let cancelled = false;
     async function loadEligibility() {
-      const supabase = getBrowserClient();
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!user) {
+      try {
+        const supabase = getBrowserClient();
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        if (!user) {
+          if (!cancelled) setEligibility("guest");
+          return;
+        }
+        const { data: profile } = await supabase.from("user_profile").select("is_adult").eq("id", user.id).single();
+        if (!cancelled) setEligibility(profile?.is_adult ? "eligible" : "minor");
+      } catch {
         if (!cancelled) setEligibility("guest");
-        return;
       }
-      const { data: profile } = await supabase.from("user_profile").select("is_adult").eq("id", user.id).single();
-      if (!cancelled) setEligibility(profile?.is_adult ? "eligible" : "minor");
     }
     loadEligibility();
     return () => {

@@ -10,7 +10,7 @@ export type UserRole = "member" | "admin";
 export type MatePostStatus = "RECRUITING" | "CLOSED" | "COMPLETED";
 export type MateApplicationStatus = "PENDING" | "ACCEPTED" | "REJECTED";
 export type ReportTargetType = "mate_post" | "user_profile";
-export type ReportStatus = "PENDING" | "REVIEWED" | "RESOLVED";
+export type ReportStatus = "OPEN" | "REVIEWING" | "RESOLVED" | "DISMISSED";
 
 export interface Database {
   public: {

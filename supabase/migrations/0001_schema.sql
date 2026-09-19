@@ -69,7 +69,7 @@ create table if not exists report (
   target_type text not null check (target_type in ('mate_post', 'user_profile')),
   target_id uuid not null,
   reason text not null,
-  status text not null default 'PENDING' check (status in ('PENDING', 'REVIEWED', 'RESOLVED')),
+  status text not null default 'OPEN' check (status in ('OPEN', 'REVIEWING', 'RESOLVED', 'DISMISSED')),
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );

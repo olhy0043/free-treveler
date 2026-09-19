@@ -137,7 +137,7 @@
         "CMP-SCR005-ADMIN-OUTBOUND",
         "CMP-SCR005-ADMIN-REPORTS"
       ],
-      "status": "pending",
+      "status": "completed",
       "checkpoint_required": false,
       "checkpoint_result": null
     },

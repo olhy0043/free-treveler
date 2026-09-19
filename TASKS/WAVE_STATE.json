@@ -123,9 +123,9 @@
         "CMP-SCR004-APPLY-FORM",
         "PAGE-SCR004"
       ],
-      "status": "in_progress",
+      "status": "completed",
       "checkpoint_required": true,
-      "checkpoint_result": "PENDING_HUMAN_REVIEW"
+      "checkpoint_result": "CONFIRMED_2026-09-19_user_reviewed_mates_page"
     },
     {
       "wave_id": "W10",
